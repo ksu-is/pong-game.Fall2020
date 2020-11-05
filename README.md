@@ -5,9 +5,9 @@ The main goal is to make the game run seamlessly with no apparent issues.  We pl
 ## How to Play
 Move the left paddle by 'w' for up and 's' for down. Move the right paddle by 'up' arrow and 'down' arrow
 ## Road Map
-* <p>[x] Establish teams and get approved topic<\p>
+* <p>[x] Establish teams and get approved topic</p>
 * <p>[x] Download/Clone Joe's repository</p> 
-* <p>[x] Attempted to run code<\p>
+* <p>[x] Attempted to run code</p>
 * <p>[x] Updated README.md and License</p>
 * <p>[x] Create Roadmap</p>
 * <p>[x] Fix code to make to playable</p>
