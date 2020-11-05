@@ -11,7 +11,7 @@ Move the left paddle by 'w' for up and 's' for down. Move the right paddle by 'u
 * <p>[x] Updated README.md and License</p>
 * <p>[x] Create Roadmap</p>
 * <p>[x] FInd other examples of existing Pong code</p>
-* <p>[ ] Create the ability for paddles to wrap around screen</p>
+* <p>[ ] Create ability for paddles to wrap around screen</p>
 * <p>[ ] Enhance scoreboard capabilities with a timer</p>
 ## License 
 https://github.com/ksu-is/Pong-Game/blob/master/LICENSE
