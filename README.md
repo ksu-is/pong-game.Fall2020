@@ -20,4 +20,4 @@ Move the left paddle by 'w' for up and 's' for down. Move the right paddle by 'u
 
 ## License 
 https://github.com/ksu-is/Pong-Game/blob/master/LICENSE
-Taylor 
+
