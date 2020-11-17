@@ -41,8 +41,8 @@ ball.shape("circle")
 ball.color("lime")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = .175  #speed change
-ball.dy = .175
+ball.dx = .125  #speed change
+ball.dy = .125
 
 # Pen
 pen = turtle.Turtle()
@@ -125,4 +125,3 @@ while True:
     elif (ball.ycor() < -340 and ball.ycor() > -350) and (ball.xcor() < paddle_a.xcor() + 60 and ball.xcor() > paddle_a.xcor() -60):
         ball.setx(-340)
         ball.dx *= -1
-print('TJ Martin')
