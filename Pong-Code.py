@@ -1,6 +1,6 @@
 # Playable Pong Game in Python 3 for Beginners
-# Pong Game
-# 
+# Pong Game Deluxe - Updated by TJ Martin and Taylor Harbin
+
 
 import turtle
 # Setting the Frames Per Second
@@ -40,13 +40,15 @@ paddle_b.penup()
 paddle_b.goto(350, 0)
 
 # Ball
+# Keep original size and start in the middle of the screen
 ball = turtle.Turtle()
 ball.speed(0)
 ball.shape("circle")
 ball.color("lime")
 ball.penup()
 ball.goto(0, 0)
-ball.dx = .125  #speed change
+# Speed of the ball
+ball.dx = .125  
 ball.dy = .125
 
 # Pen
@@ -59,9 +61,13 @@ pen.goto(0, 260)
 pen.write("Player 1: 0  Player 2: 0", align="center", font=("Courier", 24, "normal"))
 
 # Function
+
 def paddle_a_up():
+    # Return the y-coordinates and store it in variable 'y'
 	y = paddle_a.ycor()
+    # Move the paddle up by 22 pixels
 	y += 22
+    # Update new coordinates 
 	paddle_a.sety(y)
 
 def paddle_a_down():
@@ -81,6 +87,7 @@ def paddle_b_down():
 
 # Keyboard binding
 wn.listen()
+# Call the function when the corresponding key is pressed
 wn.onkeypress(paddle_a_up, "w")
 wn.onkeypress(paddle_a_down, "s")
 wn.onkeypress(paddle_b_up, "Up")
@@ -119,6 +126,7 @@ while True:
 
 
     # Paddle and ball collisions
+    # Set up for the ball to be able to collide with the paddles but not the x-axis borders
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 60 and ball.ycor() > paddle_b.ycor() -60):
         ball.setx(340)
         ball.dx *= -1
