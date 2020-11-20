@@ -12,7 +12,7 @@ wn.bgcolor("black")
 wn.setup(width=800, height=600)
 wn.tracer(0)
 
-# Score
+# Score (At the start of game)
 score_a = 0
 score_b = 0
 
@@ -51,11 +51,13 @@ ball.goto(0, 0)
 ball.dx = .125  
 ball.dy = .125
 
-# Pen
+# Pen (Scoreboard)
 pen = turtle.Turtle()
 pen.speed(0)
 pen.color("lime")
+# Gets rid of line that is drawn on the screen
 pen.penup()
+# Hides the drawing animation
 pen.hideturtle()
 pen.goto(0, 260)
 pen.write("Player 1: 0  Player 2: 0", align="center", font=("Courier", 24, "normal"))
@@ -113,14 +115,18 @@ while True:
     if ball.xcor() > 360:
         ball.goto(0, 0)
         ball.dx *= -1
+        # Function to add a score to player 1
         score_a += 1
+        # Clears previous score
         pen.clear()
         pen.write("Player 1: {}  Player 2: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
     elif ball.xcor() < -360:
         ball.goto(0, 0)
         ball.dx *= -1
+        # Function to add a score to player 2
         score_b += 1
+        # Clears previous score
         pen.clear()
         pen.write("Player 1: {}  Player 2: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
