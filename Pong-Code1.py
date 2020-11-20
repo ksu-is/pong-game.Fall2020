@@ -33,7 +33,7 @@ paddle_a.goto(-350, 0)
 paddle_b = turtle.Turtle()
 paddle_b.speed(0)
 paddle_b.shape("square")
-paddle_b.color("lime")
+paddle_b.color("red")
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
 # Paddle starting position (right side)
@@ -46,8 +46,18 @@ paddle_c.shape("square")
 paddle_c.color("lime")
 paddle_c.shapesize(stretch_wid=1, stretch_len=5)
 paddle_c.penup()
-# Paddle starting position (right side)
+# Paddle starting position (middle)
 paddle_c.goto(0, 250)
+
+#Paddle D
+paddle_d = turtle.Turtle()
+paddle_d.speed(0)
+paddle_d.shape("square")
+paddle_d.color("red")
+paddle_d.shapesize(stretch_wid=1, stretch_len=5)
+paddle_d.penup()
+#Paddle starting position(middle)
+paddle_d.goto(0,-250)
 
 
 # Ball
@@ -59,8 +69,8 @@ ball.color("lime")
 ball.penup()
 ball.goto(0, 0)
 # Speed of the ball
-ball.dx = .125  
-ball.dy = .125
+ball.dx = .155  
+ball.dy = .155
 
 # Pen (Scoreboard)
 pen = turtle.Turtle()
@@ -108,6 +118,16 @@ def paddle_c_right():
     x -= 22
     paddle_c.setx(x)
 
+def paddle_d_left():
+    x = paddle_d.xcor()
+    x -= 22
+    paddle_d.setx(x)
+
+def paddle_d_right():
+    x = paddle_d.xcor()
+    x += 22
+    paddle_d.setx(x)
+
 # Keyboard binding
 wn.listen()
 # Call the function when the corresponding key is pressed
@@ -117,7 +137,8 @@ wn.onkeypress(paddle_b_up, "Up")
 wn.onkeypress(paddle_b_down, "Down")
 wn.onkeypress(paddle_c_left, "y")
 wn.onkeypress(paddle_c_right, "t")
-
+wn.onkeypress(paddle_d_left, "v")
+wn.onkeypress(paddle_d_right, "b")
 # Main game loop
 while True:
     wn.update()	
