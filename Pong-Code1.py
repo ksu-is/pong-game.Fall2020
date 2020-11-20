@@ -49,6 +49,7 @@ paddle_c.penup()
 # Paddle starting position (right side)
 paddle_c.goto(0, 250)
 
+
 # Ball
 # Keep original size and start in the middle of the screen
 ball = turtle.Turtle()
@@ -98,13 +99,13 @@ def paddle_b_down():
 	paddle_b.sety(y)
 
 def paddle_c_left():    
-    y = paddle_c.xcor()
-    y += 22
+    x = paddle_c.xcor()
+    x += 22
     paddle_c.setx(x)
 
 def paddle_c_right():
-    y = paddle_c.xcor()
-    y -= 22
+    x = paddle_c.xcor()
+    x -= 22
     paddle_c.setx(x)
 
 # Keyboard binding
@@ -114,8 +115,8 @@ wn.onkeypress(paddle_a_up, "w")
 wn.onkeypress(paddle_a_down, "s")
 wn.onkeypress(paddle_b_up, "Up")
 wn.onkeypress(paddle_b_down, "Down")
-wn.onkeypress(paddle_c_left, "t")
-wn.onkeypress(paddle_c_right, "y")
+wn.onkeypress(paddle_c_left, "y")
+wn.onkeypress(paddle_c_right, "t")
 
 # Main game loop
 while True:
@@ -125,14 +126,17 @@ while True:
     ball.setx(ball.xcor() + ball.dx)
     ball.sety(ball.ycor() + ball.dy)
 
-	# Y Border checking
+	# Y Border checking (deleted for 4 player mode)
     if ball.ycor() > 290:
-        ball.sety(290)
-        ball.dy *= -1
+        ball.goto(0,0)
+        ball.dx *= -1
 
     elif ball.ycor() < -290:
-        ball.sety(-290)
-        ball.dy *= -1
+        ball.goto(0,0)
+        ball.dx *= -1
+
+
+
     # X Border Checking
     if ball.xcor() > 360:
         ball.goto(0, 0)
@@ -162,7 +166,21 @@ while True:
     elif (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 60 and ball.ycor() > paddle_a.ycor() -60):
         ball.setx(-340)
         ball.dx *= -1
+
+    if (ball.ycor() > 270 and ball.xcor() < 280) and (ball.ycor() < paddle_c.ycor() + 60 and ball.ycor() > paddle_c.ycor() -60):
+        ball.sety(270)
+        ball.dx *= -1
+
+    elif (ball.ycor() < -270 and ball.xcor() > 280) and (ball.ycor() < paddle_c.ycor() + 60 and ball.ycor() > paddle_c.ycor() -60):
+        ball.setx(270)
+        ball.dx *= -1
+
+
     # Paddle 
     elif (ball.ycor() < -340 and ball.ycor() > -350) and (ball.xcor() < paddle_a.xcor() + 60 and ball.xcor() > paddle_a.xcor() -60):
         ball.setx(-340)
+        ball.dx *= -1
+
+    elif (ball.ycor() < -270 and ball.ycor() > -280) and (ball.xcor() < paddle_c.xcor() + 60 and ball.xcor() > paddle_c.xcor() -60):
+        ball.setx(-270)
         ball.dx *= -1
