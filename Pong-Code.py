@@ -7,7 +7,7 @@ import turtle
 FPS = 60 
 
 wn = turtle.Screen()
-wn.title("Pong Game")
+wn.title("Pong Game Deluxe")
 wn.bgcolor("black")
 wn.setup(width=800, height=600)
 wn.tracer(0)
@@ -17,21 +17,26 @@ score_a = 0
 score_b = 0
 
 # Paddle A
+# paddle_x = modulename.Classname
 paddle_a = turtle.Turtle()
+# Setting the paddle to maximum possible speed
 paddle_a.speed(0)
 paddle_a.shape("square")
 paddle_a.color("lime")
+# Stretching the paddle to the appropriate length
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 paddle_a.penup()
+# Paddle starting position (left side)
 paddle_a.goto(-350, 0)
 
-# Paddle C
+# Paddle B
 paddle_b = turtle.Turtle()
 paddle_b.speed(0)
 paddle_b.shape("square")
 paddle_b.color("lime")
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
+# Paddle starting position (right side)
 paddle_b.goto(350, 0)
 
 # Ball
