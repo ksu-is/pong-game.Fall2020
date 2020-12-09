@@ -22,7 +22,7 @@ paddle_a = turtle.Turtle()
 # Setting the paddle to maximum possible speed
 paddle_a.speed(0)
 paddle_a.shape("square")
-paddle_a.color("lime")
+paddle_a.color("purple")
 # Stretching the paddle to the appropriate length
 paddle_a.shapesize(stretch_wid=5, stretch_len=1)
 paddle_a.penup()
@@ -33,7 +33,7 @@ paddle_a.goto(-350, 0)
 paddle_b = turtle.Turtle()
 paddle_b.speed(0)
 paddle_b.shape("square")
-paddle_b.color("red")
+paddle_b.color("blue")
 paddle_b.shapesize(stretch_wid=5, stretch_len=1)
 paddle_b.penup()
 # Paddle starting position (right side)
@@ -43,7 +43,7 @@ paddle_b.goto(350, 0)
 paddle_c = turtle.Turtle()
 paddle_c.speed(0)
 paddle_c.shape("square")
-paddle_c.color("lime")
+paddle_c.color("purple")
 paddle_c.shapesize(stretch_wid=1, stretch_len=5)
 paddle_c.penup()
 # Paddle starting position (middle)
@@ -53,7 +53,7 @@ paddle_c.goto(0, 250)
 paddle_d = turtle.Turtle()
 paddle_d.speed(0)
 paddle_d.shape("square")
-paddle_d.color("red")
+paddle_d.color("blue")
 paddle_d.shapesize(stretch_wid=1, stretch_len=5)
 paddle_d.penup()
 #Paddle starting position(middle)
@@ -65,7 +65,7 @@ paddle_d.goto(0,-250)
 ball = turtle.Turtle()
 ball.speed(0)
 ball.shape("circle")
-ball.color("lime")
+ball.color("orange")
 ball.penup()
 ball.goto(0, 0)
 # Speed of the ball
@@ -81,7 +81,7 @@ pen.penup()
 # Hides the drawing animation
 pen.hideturtle()
 pen.goto(0, 260)
-pen.write("Player 1: 0  Player 2: 0", align="center", font=("Courier", 24, "normal"))
+pen.write("Lakers: 0  Clippers: 0", align="center", font=("Courier", 24, "normal"))
 
 # Function
 
@@ -148,34 +148,43 @@ while True:
     ball.sety(ball.ycor() + ball.dy)
 
 	# Y Border checking (deleted for 4 player mode)
-    if ball.ycor() > 290:
+    if ball.ycor() > 270:
         ball.goto(0,0)
         ball.dx *= -1
+        #Function to add a score to Team 2 (Clippers)
+        score_b += 1
+        #Clears previous score
+        pen.clear()
+        pen.write("Lakers: {}  Clippers: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
     elif ball.ycor() < -290:
         ball.goto(0,0)
-        ball.dx *= -1
-
+        ball.dy *= -1
+        #Function to add a score to team 1 (Lakers)
+        score_a += 1
+        #Clears previous score
+        pen.clear()
+        pen.write("Lakers: {}  Clippers: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
 
     # X Border Checking
     if ball.xcor() > 360:
         ball.goto(0, 0)
         ball.dx *= -1
-        # Function to add a score to player 1
+        # Function to add a score to Team 1 (Lakers)
         score_a += 1
         # Clears previous score
         pen.clear()
-        pen.write("Player 1: {}  Player 2: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
+        pen.write("Lakers: {}  Clippers: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
     elif ball.xcor() < -360:
         ball.goto(0, 0)
         ball.dx *= -1
-        # Function to add a score to player 2
+        # Function to add a score to Team 2 (Clippers)
         score_b += 1
         # Clears previous score
         pen.clear()
-        pen.write("Player 1: {}  Player 2: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
+        pen.write("Lakers: {}  Clippers: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
 
     # Paddle and ball collisions
