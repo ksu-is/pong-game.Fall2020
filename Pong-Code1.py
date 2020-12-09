@@ -197,20 +197,6 @@ while True:
         ball.setx(-340)
         ball.dx *= -1
 
-    if (ball.ycor() > 270 and ball.xcor() < 280) and (ball.ycor() < paddle_c.ycor() + 60 and ball.ycor() > paddle_c.ycor() -60):
-        ball.sety(270)
-        ball.dx *= -1
 
-    elif (ball.ycor() < -270 and ball.xcor() > 280) and (ball.ycor() < paddle_c.ycor() + 60 and ball.ycor() > paddle_c.ycor() -60):
-        ball.setx(270)
-        ball.dx *= -1
-
-
-    # Paddle 
-    elif (ball.ycor() < -340 and ball.ycor() > -350) and (ball.xcor() < paddle_a.xcor() + 60 and ball.xcor() > paddle_a.xcor() -60):
-        ball.setx(-340)
-        ball.dx *= -1
-
-    elif (ball.ycor() < -270 and ball.ycor() > -280) and (ball.xcor() < paddle_c.xcor() + 60 and ball.xcor() > paddle_c.xcor() -60):
-        ball.setx(-270)
-        ball.dx *= -1
+   
+ 
