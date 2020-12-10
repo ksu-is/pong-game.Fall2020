@@ -189,13 +189,25 @@ while True:
 
     # Paddle and ball collisions
     # Set up for the ball to be able to collide with the paddles but not the x-axis borders
+    #Paddle B Collision
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 60 and ball.ycor() > paddle_b.ycor() -60):
         ball.setx(340)
         ball.dx *= -1
 
+    # Paddle A Collision
     elif (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 60 and ball.ycor() > paddle_a.ycor() -60):
         ball.setx(-340)
         ball.dx *= -1
+    
+    # Paddle C Collision
+    elif (ball.ycor() > 240 and ball.ycor() < 250) and (ball.xcor() < paddle_c.xcor() + 60 and ball.xcor() > paddle_c.xcor() -60):
+        ball.sety(240)
+        ball.dy *= -1
+    
+    #Paddle D Collision
+    elif (ball.ycor() < -240 and ball.ycor() > -250) and (ball.xcor() < paddle_d.xcor() + 60 and ball.xcor() > paddle_d.xcor() -60):
+        ball.sety(-240)
+        ball.dy *= -1
 
 
    
