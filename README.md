@@ -15,8 +15,8 @@ Move the left paddle by 'w' for up and 's' for down. Move the right paddle by 'u
 * <p>[ ] Add sound effects to the game</p>
 * <p>[ ] Create ability for paddles to wrap around screen</p>
 * <p>[ ] Enhance scoreboard capabilities with a timer</p>
-* <p>[ ] Change from 2 player mode to 4 player mode</p>
-* <p>[ ] Add a teams element (lime and red teams). Each time either member scores it adds to the teams total score</p>
+* <p>[x] Change from 2 player mode to 4 player mode</p>
+* <p>[x] Add a teams element (Lakers and Clippers - 2 players each). Each time either member scores it adds to the teams total score</p>
 ## License 
 https://github.com/ksu-is/Pong-Game/blob/master/LICENSE
 
