@@ -3,6 +3,7 @@
 
 
 import turtle
+import winsound
 # Setting the Frames Per Second
 FPS = 60 
 
@@ -149,6 +150,7 @@ while True:
 
 	# Y Border checking (deleted for 4 player mode)
     if ball.ycor() > 270:
+        winsound.PlaySound("score.wav", winsound.SND_ASYNC)
         ball.goto(0,0)
         ball.dx *= -1
         #Function to add a score to Team 2 (Clippers)
@@ -158,6 +160,7 @@ while True:
         pen.write("Lakers: {}  Clippers: {}".format(score_a, score_b), align="center", font=("Courier", 24, "normal"))
 
     elif ball.ycor() < -290:
+        winsound.PlaySound("score.wav", winsound.SND_ASYNC)
         ball.goto(0,0)
         ball.dy *= -1
         #Function to add a score to team 1 (Lakers)
@@ -193,21 +196,25 @@ while True:
     if (ball.xcor() > 340 and ball.xcor() < 350) and (ball.ycor() < paddle_b.ycor() + 60 and ball.ycor() > paddle_b.ycor() -60):
         ball.setx(340)
         ball.dx *= -1
+        winsound.PlaySound("pongblip.wav", winsound.SND_ASYNC)
 
     # Paddle A Collision
     elif (ball.xcor() < -340 and ball.xcor() > -350) and (ball.ycor() < paddle_a.ycor() + 60 and ball.ycor() > paddle_a.ycor() -60):
         ball.setx(-340)
         ball.dx *= -1
+        winsound.PlaySound("pongblip.wav", winsound.SND_ASYNC)
     
     # Paddle C Collision
     elif (ball.ycor() > 240 and ball.ycor() < 250) and (ball.xcor() < paddle_c.xcor() + 60 and ball.xcor() > paddle_c.xcor() -60):
         ball.sety(240)
         ball.dy *= -1
+        winsound.PlaySound("pongblip.wav", winsound.SND_ASYNC)
     
     #Paddle D Collision
     elif (ball.ycor() < -240 and ball.ycor() > -250) and (ball.xcor() < paddle_d.xcor() + 60 and ball.xcor() > paddle_d.xcor() -60):
         ball.sety(-240)
         ball.dy *= -1
+        winsound.PlaySound("pongblip.wav", winsound.SND_ASYNC)
 
 
    
