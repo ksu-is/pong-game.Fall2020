@@ -12,7 +12,7 @@ Move the left paddle by 'w' for up and 's' for down. Move the right paddle by 'u
 * <p>[x] Create Roadmap</p>
 * <p>[x] FInd other examples of existing Pong code</p>
 * <p>[x] Familiarize ourselves with turtle module (video tutorials)</p>
-* <p>[ ] Add sound effects to the game</p>
+* <p>[x] Add sound effects to the game</p>
 * <p>[ ] Enhance scoreboard capabilities with a timer</p>
 * <p>[x] Change from 2 player mode to 4 player mode</p>
 * <p>[x] Add a teams element (Lakers and Clippers - 2 players each). Each time either member scores it adds to the teams total score</p>
