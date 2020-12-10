@@ -3,7 +3,8 @@ Add and improve to Pong game already started by Joe. The code cloned from Joe is
 The main goal is to make the game run seamlessly with no apparent issues.  We plan to add some neat features that don’t already exist in the code such as a enhanced scoreboard with a timer, and the ability for the paddles to wrap around the screen for easier use. 
 
 ## How to Play
-Move the left paddle by 'w' for up and 's' for down. Move the right paddle by 'up' arrow and 'down' arrow
+Move the left paddle by pressing 'w' for up and 's' for down. Move the right paddle by pressing 'up' arrow and 'down' arrow.
+Move the top paddle by pressing 't' for left and 'y' for right. Move the bottom paddle by pressing 'v' for left and 'b' for right.
 ## Road Map
 * <p>[x] Establish teams and get approved topic</p>
 * <p>[x] Download/Clone Joe's repository</p> 
